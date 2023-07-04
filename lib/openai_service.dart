@@ -1,10 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
-import 'package:allen/secrets.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class OpenAIService {
   final List<Map<String, String>> messages = [];
+  final openAIAPIKey = dotenv.env['openAIAPIKey'];
 
   Future<String> isArtPromptAPI(String prompt) async {
     try {
